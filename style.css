@@ -1,5 +1,27 @@
+:root{
+    --text-color: white; 
+    --background-img: url("./assets/bg-desktop.jpg");  
+    --border-color: white;
+    --surface-color: rgba(255, 255, 255, 0.1);
+    --surface-color-hover: white;
+    --surface-color-text-hover: black;
+    --swicth-bg-url: url("./assets/MoonStars.svg")
+}
+
+
+.light{
+    --text-color: black; 
+    --background-img: url("./assets/bg-desktop-light.jpg");  
+    --border-color: black;
+    --surface-color: rgba(0, 0, 0, 0.1);
+    --surface-color-hover: black;
+    --surface-color-text-hover: white;
+    --swicth-bg-url: url("./assets/Sun.svg")
+}
+
+
 body{
-    background-image: url("./assets/bg-desktop.jpg");
+    background-image: var(--background-img);
     background-size: cover;
     font-family: "Roboto";
     font-size: 16px;
@@ -29,12 +51,30 @@ body{
     width: 112px;
     height: 112px;
     border-radius: 100%;
-    border: 1px solid white; 
+    border: 1px solid var(--border-color); 
     
 }
 
 #profile span{
-    color: white;
+    color: var(--text-color);
+}
+
+#switch {
+    position: relative;
+    width: 64px;
+    margin: 4px auto;
+
+}
+
+#switch button{
+    width: 36px;
+    height: 36px;
+    border-radius: 100%;
+    background-image: var(--swicth-bg-url);
+    border: none;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .menu ul{
@@ -44,10 +84,10 @@ body{
 
 .menu ul li{
     text-align: center;
-    border: 1px solid white;
+    border: 1px solid var(--border-color);
     border-radius: 6px;
     margin: 20px 0;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--surface-color);
     transition: 0.2s ease;
 }
 
@@ -56,7 +96,7 @@ body{
     align-items: center;
     flex-direction: row;
     justify-content: center;
-    color: white;
+    color: var(--text-color);
     text-decoration: none;
     width: 100%;
     height: 100%;
@@ -65,12 +105,12 @@ body{
 }
 
 .menu ul li:hover{
-    background-color: white;
+    background-color: var(--surface-color-hover);
 
 }
 
 .menu ul li:hover a{
-    color: black;
+    color: var(--surface-color-text-hover);
 }
 
 .social {
@@ -79,14 +119,13 @@ body{
     align-items: center;
     justify-content: center;
     gap: 12px;
-    border-top-color:white ;
-    border-top-style: solid ;
+    
     width: 100%;
-    padding-top: 12px;
+    padding-top: 12px ;
 }
 
 .social a{
-    color: white;
+    color: var(--text-color);
     font-size: 20px;
     text-decoration: none;
     
@@ -95,4 +134,12 @@ body{
 .social a:hover{
     opacity: 0.5;
     transition: 0.2s ease;
+}
+
+.rodape {
+    display: flex;
+    justify-content: center;
+    color: var(--text-color);
+    font-size: 12px;
+    padding-top: 20px;
 }
